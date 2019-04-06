@@ -14,5 +14,14 @@ A Nodejs shopping cart app with Flutter, React.
 
 ### :high_brightness: Routes
 
+> Authentication
+
 **Signup** - `http:localhost:8000/api/v1/signup`
+
 **Login** - `https:localhost:8000/api/v1/login`
+
+> Products
+
+**Add new products** - `http:localhost:8000/api/v1/products/create`
+
+**Get all products** - `http:localhost:8000/api/v1/products`
