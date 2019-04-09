@@ -25,3 +25,9 @@ A Nodejs shopping cart app with Flutter, React.
 **Add new products** - `http:localhost:8000/api/v1/products/create`
 
 **Get all products** - `http:localhost:8000/api/v1/products`
+
+**Fetch single product** - `http:localhost:8000/api/v1/products/:id`
+
+**Update single product** - `http:localhost:8000/api/v1/products/update/:id`
+
+**Delete single product** - `http:localhost:8000/api/v1/products/delete/:id`
