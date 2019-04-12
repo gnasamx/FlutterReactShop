@@ -55,7 +55,16 @@
 body {
   margin: 0;
   padding: 0;
+  line-height: 1.5;
   font-family: 'Cereal';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }

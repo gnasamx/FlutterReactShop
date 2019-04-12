@@ -18,7 +18,7 @@ A Nodejs shopping cart app with Flutter, React.
 
 **Signup** - `http:localhost:8000/api/v1/signup`
 
-**Login** - `https:localhost:8000/api/v1/login`
+**Login** - `http:localhost:8000/api/v1/login`
 
 > Products
 
