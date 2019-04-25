@@ -1,6 +1,7 @@
 import Product from './product.model'
 import mongoose from 'mongoose'
 
+
 export async function addProduct(req, res) {
   try {
     const product = new Product({
@@ -11,6 +12,8 @@ export async function addProduct(req, res) {
       image: req.file.path
     })
 
+    console.log(product)
+
     await product.save()
 
     return res.status(201).json({
@@ -19,7 +22,7 @@ export async function addProduct(req, res) {
     })
   } catch (error) {
     return res
-      .status(error.status)
+      .status(400)
       .json({ error: error, message: 'Failed to add product into database' })
   }
 }
@@ -30,12 +33,10 @@ export async function fetchAllProducts(req, res) {
       products: await Product.find({})
     })
   } catch (error) {
-    return res
-      .status(error.status)
-      .json({
-        error: error,
-        message: 'Failed to fetch all products from database'
-      })
+    return res.status(400).json({
+      error: error,
+      message: 'Failed to fetch all products from database'
+    })
   }
 }
 

@@ -3,7 +3,6 @@ import validator from 'validator'
 import { hashSync, compareSync } from 'bcrypt-nodejs'
 import { passwordReg } from './user.validations'
 import jwt from 'jsonwebtoken'
-import constants from '../../config/constants'
 
 const UserSchema = new Schema({
   email: {
@@ -46,6 +45,10 @@ const UserSchema = new Schema({
       message:
         'Password is not a valid password! Must have uppercase, lowercase, numbers! '
     }
+  },
+  cart: {
+    type: Schema.Types.ObjectId,
+    ref: 'Cart'
   }
 })
 
@@ -78,6 +81,18 @@ UserSchema.methods = {
       userName: this.userName,
       token: `JWT ${this.createToken()}`
     }
+  }
+}
+
+UserSchema.statics.createCart = async function(userId) {
+  console.log('Inside createCart: ', userId)
+  const Cart = mongoose.model('Cart')
+  const cart = await new Cart({ user: userId })
+  console.log('Cart;', cart)
+  await this.findOneAndUpdate({ _id: userId }, { cart: cart._id })
+
+  return {
+    cart: await cart.save()
   }
 }
 
