@@ -34,9 +34,8 @@ A Nodejs shopping cart app with Flutter, React.
 
 > Cart
 
-<!-- **Add to cart** - `http:localhost:8000/api/v1/cart/create/:id` -->
+**Add to cart** - `http:localhost:8000/api/v1/cart/:cartId:/create/:productId`
 
 **Update cart product** - `http:localhost:8000/api/v1/cart/:cartId/update/:productId`
 
 **Fetch all cart products** - `http:localhost:8000/api/v1/cart`
-
